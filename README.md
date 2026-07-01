@@ -5,7 +5,7 @@ To find the most demanded skills for the top 3 most popular jobs I filtered out 
 This query highlights the most popular roles and the 5 top skills associated to them, showing what skills I should pay attention to depending on the role I'm targeting.
 
 View my notebook with detailed steps here: 
-[2_Skills_Demand.ipynb](2_My_Project\2_Skills_Demand.ipynb)
+[2_Skills_Demand.ipynb](2_My_Project/2_Skills_Demand.ipynb)
 
 ### Visualizing Data 
 
