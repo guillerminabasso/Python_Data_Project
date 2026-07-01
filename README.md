@@ -46,3 +46,39 @@ plt.show()
 * For **Data Analyst** roles, **Excel** and **data visualization tools** are the second and third most requested skills, highlighting their importance for data analysis and reporting.
 
 
+## 2. How are in-demand skills trending for Data Analysts?
+
+```python 
+df_plot = df_percent.iloc[:,:5]
+sns.lineplot(data=df_plot, dashes=False, palette='flare')
+sns.set_theme(style='ticks')
+sns.despine()
+
+plt.title('Top 5 Skills Trend for Data Analyst Jobs in the US')
+plt.ylabel('Likelihood of Skill Mention')
+plt.xlabel('2023')
+plt.legend().remove()
+
+from matplotlib.ticker import PercentFormatter
+ax = plt.gca()
+ax.yaxis.set_major_formatter(PercentFormatter(decimals=0))
+
+
+for i in range(5):
+    plt.text(11.2, df_plot.iloc[-1, i], df_plot.columns[i])
+
+plt.tight_layout()
+plt.show()
+```
+
+### Results
+
+![Trending Top Skills for Data Analysts in the US](2_My_Project/images/skills_trend.png)
+*Line chart visualizing the trending top skills for data analysts in the US in 2023*
+
+### Insights
+
+* **SQL** shows a fairly steady presence in job postings throughout the year, standing out from the other skills by appearing in more than 50% of postings every month.
+* **Excel** remains the second most in-demand skill for Data Analysts, although its presence in job postings decreases slightly from August to October.
+* **Python, Tableau** and **Power BI** also remain relatively steady throughout the year. Python and Tableau appear in around 30–35% of job postings, while Power BI appears in approximately 20%.
+
