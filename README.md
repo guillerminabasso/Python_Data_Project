@@ -9,7 +9,7 @@ View my notebook with detailed steps here:
 
 ### Visualizing Data 
 
-```
+```python
 fig, ax = plt.subplots(len(job_titles), 1)
 
 sns.set_theme(style='ticks')
