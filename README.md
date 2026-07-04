@@ -74,6 +74,7 @@ plt.show()
 ### Results
 
 ![Trending Top Skills for Data Analysts in the US](2_My_Project/images/skills_trend.png)
+
 *Line chart visualizing the trending top skills for data analysts in the US in 2023*
 
 ### Insights
@@ -110,6 +111,7 @@ ax.xaxis.set_major_formatter(FuncFormatter(lambda x, pos: f'{x/1000:.0f}$k'))
 #### Results
 
 ![Salary Distributions of Data Jobs in the US](2_My_Project/images/salary_distribution.png)
+
 *Box plot visualizing the salary distributions for the top 6 data jobs.*
 
 #### Insights
