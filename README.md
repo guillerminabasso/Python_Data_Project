@@ -82,3 +82,81 @@ plt.show()
 * **Excel** remains the second most in-demand skill for Data Analysts, although its presence in job postings decreases slightly from August to October.
 * **Python, Tableau** and **Power BI** also remain relatively steady throughout the year. Python and Tableau appear in around 30–35% of job postings, while Power BI appears in approximately 20%.
 
+## 3. How well do jobs and skills pay for Data Analysts?
+
+### Salary Analysis
+
+#### Visualize Data
+
+```python
+sns.boxplot(
+        data=df_jobs_top6, 
+        y='job_title_short', 
+        x='salary_year_avg',
+        order=jobs_order
+    )
+sns.set_theme(style='ticks', palette='flare')
+
+plt.title('Salary Distributions by Job Title')
+plt.ylabel('')
+plt.xlabel('')
+
+from matplotlib.ticker import FuncFormatter
+
+ax = plt.gca()
+ax.set_xlim(0,400000)
+ax.xaxis.set_major_formatter(FuncFormatter(lambda x, pos: f'{x/1000:.0f}$k'))
+```
+#### Results
+
+![Salary Distributions of Data Jobs in the US](2_My_Project/images/salary_distribution.png)
+*Box plot visualizing the salary distributions for the top 6 data jobs.*
+
+#### Insights
+
+* **Data Analyst** roles have the lowest median salaries (around $90,000), while **Senior Data Analyst** roles are slightly higher (around $110,000). Both roles show a more concentrated distribution (lower IQR) compared to other data roles. However, Data Analyst roles also present several high-salary outliers.
+* **Data Engineer** and **Data Scientist** roles are the next highest-paid positions. **Data Engineer** salaries are more tightly concentrated around the median compared to **Data Scientist** roles. Both categories show multiple high-salary outliers.
+* **Senior Data Engineer** and **Senior Data Scientist** roles have the highest median salaries overall, highlighting a clear salary gap between junior and senior positions.
+
+### Skills Analysis
+
+```python
+sns.barplot(data=df_top_pay, x='median', y='job_skills', ax=ax[0], hue='median', palette='flare')
+
+ax[0].legend().remove()
+ax[0].set_title('Top 10 Highest Paid Skills for Data Analysts')
+ax[0].set_ylabel('')
+ax[0].set_xlabel('')
+ax[0].xaxis.set_major_formatter(FuncFormatter(lambda x, pos: f'{x/1000:.0f}$k'))
+
+sns.barplot(data=df_top_skills, x='median', y='job_skills', ax=ax[1], hue='median', palette='flare')
+ax[1].legend().remove()
+ax[1].set_title('Top 10 Most In-Demand Skills for Data Analysts')
+ax[1].set_ylabel('')
+ax[1].set_xlabel('Median Salary USD')
+ax[1].set_xlim(ax[0].get_xlim()) # Set the same x-axis limits as the first plot
+ax[1].xaxis.set_major_formatter(FuncFormatter(lambda x, pos: f'{x/1000:.0f}$k'))
+```
+#### Results
+
+![Analysis of salaries associated to skills](2_My_Project/images/skills_analysis.png)
+*Box plots visualizing the salaries related to the highest paid skills and the salaries for the top 10 most in-demand skills.*
+
+#### Insights
+
+* The **10 highest-paying skills for Data Analysts** (with average salaries ranging from $150K to $200K) cover a wide range of technologies, showing that specialized technical knowledge is highly valued. The best-paid skills are mainly related to:
+   * R libraries for data manipulation (dplyr).
+   * Version control and DevOps tools for working with Git repositories (Bitbucket, GitLab).
+   * Programming languages (Solidity).
+   * AI and Machine Learning (Hugging Face, MXNet).
+   * Databases (Couchbase, Cassandra).
+   * Infrastructure automation / DevOps (Ansible).
+   * Virtualization and cloud infrastructure (VMware).
+* The **most in-demand skills for Data Analysts** are associated with lower average salaries (up to $100K) and include:
+   * Programming languages (Python, R).
+   * Data visualization tools (Tableau, Power BI).
+   * Databases (SQL Server).
+   * Query languages (SQL).
+   * Data analysis and statistical software (Excel, SAS).
+   * Productivity tools (Word, PowerPoint).
+* This reinforces the idea that breaking into the Data Analyst job market **requires building a strong foundation in core data skills** and tools such as SQL, Excel, and Python. As professionals move into more senior and higher-paying roles, **developing specialized skills** and learning more advanced tools relevant to their chosen area becomes increasingly important.
