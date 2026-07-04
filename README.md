@@ -140,6 +140,7 @@ ax[1].xaxis.set_major_formatter(FuncFormatter(lambda x, pos: f'{x/1000:.0f}$k'))
 #### Results
 
 ![Analysis of salaries associated to skills](2_My_Project/images/skills_analysis.png)
+
 *Box plots visualizing the salaries related to the highest paid skills and the salaries for the top 10 most in-demand skills.*
 
 #### Insights
