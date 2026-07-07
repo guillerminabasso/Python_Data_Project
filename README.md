@@ -163,3 +163,29 @@ ax[1].xaxis.set_major_formatter(FuncFormatter(lambda x, pos: f'{x/1000:.0f}$k'))
    * Data analysis and statistical software (Excel, SAS).
    * Productivity tools (Word, PowerPoint).
 * This reinforces the idea that breaking into the Data Analyst job market **requires building a strong foundation in core data skills** and tools such as SQL, Excel, and Python. As professionals move into more senior and higher-paying roles, **developing specialized skills** and learning more advanced tools relevant to their chosen area becomes increasingly important.
+
+## 4. What is the most optimal skill to learn for Data Analysts?
+
+#### Visualize Data
+
+```python
+from adjustText import adjust_text
+import matplotlib.pyplot as plt
+
+sns.scatterplot(
+    data=df_plot, 
+    x='skill_percent',
+    y='median_salary',
+    hue='technology')
+
+plt.show()
+```
+
+![Optimal Skills Scatter Plot](2_My_Project/images/optimal_skills.png)
+*Scatter Plot showing the most optimal skills (high paying and high demand) for Data Analysts in the US*
+
+#### Insights
+
+* **Programming skills** (green), such as Python and SQL, are located in the upper-left area of the plot, highlighting their importance in the Data Analyst field. They are both among the most in-demand and the highest-paying skills. Other programming languages, such as R, Go, and SAS, are less frequently requested but are still associated with relatively high salaries.
+* **Analyst tools** (orange) are generally associated with lower salaries, particularly Excel, PowerPoint, and Word, suggesting that they are considered core or entry-level skills. In contrast, Tableau and Power BI are linked to higher salaries, reflecting their value as more specialized tools for Data Analysts.
+* **Database** (blue) and **Cloud** (pink) skills are less frequently requested but tend to be associated with higher salaries. This suggests that they are more specialized skills, often required for higher-paying Data Analyst roles.
