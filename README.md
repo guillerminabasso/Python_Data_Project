@@ -1,3 +1,62 @@
+# Overview
+
+This is the final project from a [YouTube course on Python for Data Analysts](https://www.youtube.com/watch?v=wUSDVGivd-8). The project structure and datasets were provided as part of the course since it is a guided learning project. However, all analyses, visualizations, and insights presented here were completed independently by me.
+
+# The Questions
+
+The main questions this project aims to answer are:
+
+1. What are the most in-demand skills for Data Analysts?
+2. How did the demand for Data Analyst skills change throughout 2023?
+3. How does the salary distribution vary across the most relevant data roles, and which skills are associated with the highest salaries?
+4. Which skills offer the best combination of high demand and high salary for Data Analysts?
+
+# Tools I Used
+
+* **Python:** The core tool used throughout the project and the main reason I took this course. I used Python to clean, transform, analyze, and visualize the dataset in order to extract meaningful insights. The main libraries I used were:
+   * **Pandas:** For data cleaning, manipulation, and analysis.
+   * **Matplotlib:** For creating data visualizations.
+   * **Seaborn:** For building more advanced and aesthetically appealing visualizations.
+* **Jupyter Notebook:** Used to develop, test, and iterate on the analysis in an interactive environment before finalizing the code.
+* **VSCode:** Used as the primary code editor to organize the project and run Python scripts.
+* **GitHub:** Used for version control and to share the project with others.
+
+# Data Preparation and Clean up
+
+This section outlines the steps taken to prepare the data for analysis, ensuring accuracy and usability.
+
+## Import & Clean Up Data
+
+I start by importing necessary libraries and loading the dataset, followed by initial data cleaning tasks to ensure data quality.
+
+```python
+# Importing Libraries
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import ast
+from datasets import load_dataset
+
+# Loading the dataset
+
+dataset = load_dataset("lukebarousse/data_jobs")
+df = dataset['train'].to_pandas()
+
+# Dataset Cleaning
+
+df['job_posted_date'] = pd.to_datetime(df['job_posted_date'])
+df['job_skills'] = df['job_skills'].apply(lambda x: ast.literal_eval(x) if pd.notna(x) else x)
+```
+
+## Filter US jobs
+
+To focus my analysis on the U.S. job market, I apply filters to the dataset, narrowing down to roles based in the United States.
+
+```python
+df_US = df[df['job_country'] == 'United States']
+```
+
 # The Analysis
 ## 1. What are the most demanded skills for the 3 most popular data roles?
 
@@ -190,3 +249,27 @@ plt.show()
 * **Programming skills** (green), such as Python and SQL, are located in the upper-left area of the plot, highlighting their importance in the Data Analyst field. They are both among the most in-demand and the highest-paying skills. Other programming languages, such as R, Go, and SAS, are less frequently requested but are still associated with relatively high salaries.
 * **Analyst tools** (orange) are generally associated with lower salaries, particularly Excel, PowerPoint, and Word, suggesting that they are considered core or entry-level skills. In contrast, Tableau and Power BI are linked to higher salaries, reflecting their value as more specialized tools for Data Analysts.
 * **Database** (blue) and **Cloud** (pink) skills are less frequently requested but tend to be associated with higher salaries. This suggests that they are more specialized skills, often required for higher-paying Data Analyst roles.
+
+# What I learned
+
+During the execution of this project, I gained a deeper understanding of how to use Python libraries and recognized its potential as a powerful tool for data analysis.
+
+* Advanced Python Usage: The speed at which Python can process almost 800,000 rows is impressive compared to Excel. This project helped me not only improve my Python skills but also understand how Data Analysts combine different tools depending on the dataset size and the level of analysis required.
+* Data Cleaning importance: I learned the importance of understanding how a dataset is structured, identifying the data type of each column, and applying the necessary transformations to ensure data quality and reliable analysis.
+* Strategic Skills Analysis: I gained insights into the core skills required for Data Analysts and their associated salaries, while understanding how more advanced technologies are becoming increasingly important for specialized and higher-paying roles.
+
+# Insights
+
+* **Skill Demand and Salary Correlation:** There is a relationship between skill demand and the salaries associated with those skills. Advanced programming and cloud-related skills tend to lead to higher-paying opportunities.
+* **Market Trends:** More advanced skills are becoming increasingly relevant in the data market. While mastering fundamental tools such as Excel and SQL is essential, developing additional technical skills is important for progressing into more specialized Data Analyst roles.
+* **Personal Reflection:** As a personal observation, I realized that data tools are more similar than I initially thought. Many of them can achieve similar outcomes through comparable approaches, although they may use different names or workflows. Understanding how data is structured, how it can be transformed, and how to choose the appropriate tool for each analytical task seems to be an underrated skill, but I consider it a crucial one.
+
+# Conclusions
+
+This project has been an important foundation in my data career journey. Understanding how skills evolve over time has given me a better understanding of the data market and its continuous development.
+
+I found that the data market is broad and constantly expanding. While it is true that new AI technologies can automate certain analytical tasks and potentially reduce the demand for some Data Analyst roles, human guidance remains essential to define objectives, interpret results, and make informed decisions.
+
+I believe that the key to succeeding in this field is developing the ability to interpret data correctly and transform insights into meaningful actions. For this reason, continuously improving my technical knowledge and keeping up with new technologies will be crucial for long-term growth as a Data Analyst.
+
+
