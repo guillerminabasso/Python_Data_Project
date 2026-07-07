@@ -110,9 +110,9 @@ ax.xaxis.set_major_formatter(FuncFormatter(lambda x, pos: f'{x/1000:.0f}$k'))
 ```
 #### Results
 
-![Salary Distributions of Data Jobs in the US](2_My_Project/images/salary_distribution.png)
+![Salary Distributions of Data Jobs in the US](2_My_Project/images/salary_distribution.png)  
 
-*Box plot visualizing the salary distributions for the top 6 data jobs.*
+*Box plot visualizing the salary distributions for the top 6 data jobs.*  
 
 #### Insights
 
@@ -141,9 +141,9 @@ ax[1].xaxis.set_major_formatter(FuncFormatter(lambda x, pos: f'{x/1000:.0f}$k'))
 ```
 #### Results
 
-![Analysis of salaries associated to skills](2_My_Project/images/skills_analysis.png)
+![Analysis of salaries associated to skills](2_My_Project/images/skills_analysis.png)  
 
-*Box plots visualizing the salaries related to the highest paid skills and the salaries for the top 10 most in-demand skills.*
+*Box plots visualizing the salaries related to the highest paid skills and the salaries for the top 10 most in-demand skills.*  
 
 #### Insights
 
@@ -181,8 +181,9 @@ sns.scatterplot(
 plt.show()
 ```
 
-![Optimal Skills Scatter Plot](2_My_Project/images/optimal_skills.png)
-*Scatter Plot showing the most optimal skills (high paying and high demand) for Data Analysts in the US*
+![Optimal Skills Scatter Plot](2_My_Project/images/optimal_skills.png)  
+
+*Scatter Plot showing the most optimal skills (high paying and high demand) for Data Analysts in the US*  
 
 #### Insights
 
