@@ -95,7 +95,7 @@ plt.show()
 ```
 ### Results
 
-![Visualization of Top Skills for Data Roles](2_My_Project/images/skill_demand.png)
+![Visualization of Top Skills for Data Roles](2_My_Project\images\skill_demand.png)
 
 ### Insights
 
